@@ -102,6 +102,9 @@ qq.FineUploaderBasic = function(o){
             paramNames: {
                 name: 'qqblobname'
             }
+        },
+        success_flag: {
+            'success'
         }
     };
 
@@ -526,7 +529,7 @@ qq.FineUploaderBasic.prototype = {
     },
     _maybeParseAndSendUploadError: function(id, name, response, xhr) {
         //assuming no one will actually set the response code to something other than 200 and still set 'success' to true
-        if (!response.success){
+        if (!response[this._options.success_flag]){
             if (xhr && xhr.status !== 200 && !response.error) {
                 this._options.callbacks.onError(id, name, "XHR returned response code " + xhr.status);
             }
