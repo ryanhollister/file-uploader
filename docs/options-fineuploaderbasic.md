@@ -62,6 +62,14 @@
             plus 3 ellipses separating the first several and the last several characters of the item name.  Override this function
             if you want more control over the display of item names.</td>
         </tr>
+        <tr>
+            <td>success_flag</td>
+            <td>string</td>
+            <td>success</td>
+            <td>By default, the uploader will look for a success flag in the root level of the response JSON. {success: true}.
+            This option allows you to specify a different location within the response object. For example, if the response looked like: { uploader: { success : true } }
+            then you could set this option to 'uploader.success'.</td>
+        </tr>
     </tbody>
 </table>
 ### `request` option properties: ###
